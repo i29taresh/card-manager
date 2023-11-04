@@ -1,24 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import CardDetails from './components/CardDetails.jsx';
+import BankCard from './components/BankCard';
+import BankCardBack from './components/BankCardBack.jsx';
+import CatalogueItemCard from './components/CatalogueItemCard';
+import CataloguePage from './components/CataloguePage';
+import PaymentDetailsCard from './components/PaymentDetailsCard';
+import TransactionHistoryPage from './components/TransactionHistoryPage';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* <BankCard cardNumber="1234 5678 9012 3456" expiryDate="05/22" /> */}
+      {/* <BankCardBack cvv={'123'} /> */}
+    {/* <TransactionHistoryPage /> */}
+    <CardDetails />
+    </>
   );
 }
 

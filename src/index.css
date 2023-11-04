@@ -1,5 +1,8 @@
 body {
   margin: 0;
+  padding-top: 10px;
+  box-sizing: border-box;
+  background: linear-gradient(to right, rgb(77, 95, 145), #27345f);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -11,3 +14,50 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.atm-card {
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 20px;
+  width: 350px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  /* background: linear-gradient(to right, #f1c40f, #3498db); */
+  background-image: linear-gradient(to right top, #d16ba5, #c681c4, #b696db, #a6a9ea, #9bbbf2, #8db9f3, #7cb8f4, #68b6f5, #43a1f5, #1c8cf3, #0075ee, #1f5be5);
+}
+
+.atm-card div {
+  width: 100%;
+  height: 20%;
+  text-align: center;
+}
+
+.card-header{
+  display: inline-block;
+}
+
+.card-footer, .card-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.rotate-right {
+  transform: rotate(90deg);
+}
+
+.v-divider {
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: #ddd;
+  height: 1px;
+  width: 1px;
+  box-sizing: border-box;
+ }
+
+ h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+ }
