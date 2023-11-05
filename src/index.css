@@ -9,6 +9,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+body{
+  max-width: 700px;
+  margin: auto;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -46,7 +50,7 @@ code {
 }
 
 .rotate-right {
-  transform: rotate(90deg);
+  transform: rotate(-90deg);
 }
 
 .v-divider {

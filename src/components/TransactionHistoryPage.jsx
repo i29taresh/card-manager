@@ -2,10 +2,19 @@ import { Box, Flex, HStack, Heading, Image, Spacer } from "@chakra-ui/react";
 import React from "react";
 import PageNamedHeader from "./PageNamedHeader";
 import PaymentDetailsCard from "./PaymentDetailsCard";
+import { AiOutlineArrowLeft } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 const TransactionHistoryPage = () => {
+  let navigate = useNavigate();
+  const handleOnClick = () => {
+    navigate("/");
+  }
   return (
     <>
+      <Box onClick={handleOnClick} color={'white'} paddingLeft={5}>
+        <AiOutlineArrowLeft size={30} />
+      </Box>
       <PageNamedHeader pageTitle={"History"} />
       <Box padding={3}>
         <Heading mb={3} color={"white"} size={"md"}>
