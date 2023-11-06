@@ -10,7 +10,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
-      <App  />
+      {/* <div className='external-div'> */}
+        {/* <div className='internal-div'> */}
+          <App />
+        {/* </div> */}
+      {/* </div> */}
     </ChakraProvider>
   </React.StrictMode>
 );

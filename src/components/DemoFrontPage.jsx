@@ -20,12 +20,10 @@ import { PiShareFatFill } from "react-icons/pi";
 import { MdHorizontalRule } from "react-icons/md";
 import PaymentDetailsCard from "./PaymentDetailsCard";
 
-const FrontPage = ({ balance, cards }) => {
+const DemoFrontPage = ({ balance, cards }) => {
   let navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [cardClick, setCardClick] = useState(false);
-  const [rotate, setRotate] = useState(false);
-  const [rotatingClass, setRotatingClass] = useState("");
+  const [card, setCard] = useState(false);
   balance = "1234.00";
 
   const goToPrevSlide = () => {
@@ -36,14 +34,15 @@ const FrontPage = ({ balance, cards }) => {
     setCurrentSlide(currentSlide === cards.length - 1 ? 0 : currentSlide + 1);
   };
   const handleOnClick = () => {
-    setCardClick(true);
-    setRotatingClass("rotate-class-right");
+    // navigate("/cardDetails");
+    setCard(!card);
   };
 
   // xxxxxxxxxxxxxxxxxxxx
   const [isPressed, setIsPressed] = useState(false);
   const [firstClick, setFirstClick] = useState(false);
   const [secondClick, setSecondClick] = useState(false);
+  // let navigate = useNavigate();
   const handleMouseClick = () => {
     console.log("released");
     setIsPressed(!isPressed);
@@ -58,15 +57,13 @@ const FrontPage = ({ balance, cards }) => {
       setSecondClick(false);
     }
   };
-  const handleArrowClick = () => {
-    setRotatingClass("rotate-class-left");
-    setIsPressed(false);
-    setCardClick(false);
-  };
+  // const handleOnClick = () => {
+  //   navigate("/");
+  // };
   return (
     <>
       <Box position={"relative"}>
-        {!cardClick ? (
+        {!card ? (
           <>
             <PageNamedHeader pageTitle={"Bank Cards"} />
             <Box paddingLeft={5}>
@@ -81,7 +78,7 @@ const FrontPage = ({ balance, cards }) => {
         ) : (
           <>
             <HStack padding={5} color={"white"}>
-              <Box onClick={handleArrowClick}>
+              <Box onClick={handleOnClick}>
                 <AiOutlineArrowLeft size={30} />
               </Box>
               {!firstClick && !secondClick ? (
@@ -117,7 +114,7 @@ const FrontPage = ({ balance, cards }) => {
           <></>
         ) : (
           <Center paddingLeft={5}>
-            <div className={rotatingClass}>
+            <div className={card ? "rotate-class" : ""}>
               <Box className="carousel">
                 {cards.map((card, index) => (
                   <Box>
@@ -126,17 +123,13 @@ const FrontPage = ({ balance, cards }) => {
                       style={{
                         display: index === currentSlide ? "block" : "none",
                       }}
-                      onClick={!cardClick ? handleOnClick : handleMouseClick}
+                      onClick={handleOnClick}
                       className="rotate-left"
                     >
-                      {!isPressed ? (
-                        <BankCard
-                          cardNumber={card.cardNumber}
-                          expiryDate={card.expiryDate}
-                        />
-                      ) : (
-                        <BankCardBack />
-                      )}
+                      <BankCard
+                        cardNumber={card.cardNumber}
+                        expiryDate={card.expiryDate}
+                      />
                     </Box>
                   </Box>
                 ))}
@@ -145,7 +138,7 @@ const FrontPage = ({ balance, cards }) => {
           </Center>
         )}
 
-        {!cardClick ? (
+        {!card ? (
           <Box marginTop={"11em"}>
             <HStack justifyContent={"center"}>
               <Box marginLeft={"-80px"}>
@@ -212,7 +205,7 @@ const FrontPage = ({ balance, cards }) => {
                   {!firstClick && !secondClick ? (
                     <>
                       <Heading mb={3} color={"white"} size={"md"}>
-                        Today
+                      Today
                       </Heading>
                       <PaymentDetailsCard
                         paymentTo={"Card To Card"}
@@ -308,7 +301,7 @@ const FrontPage = ({ balance, cards }) => {
                   ) : (
                     <>
                       <Heading mb={3} color={"white"} size={"md"}>
-                        Today
+                      Today
                       </Heading>
                       <PaymentDetailsCard
                         paymentTo={"Card To Card"}
@@ -354,7 +347,7 @@ const FrontPage = ({ balance, cards }) => {
           </>
         )}
 
-        <Box className="footer">
+        <Box position={"absolute"}>
           <FooterNavBar />
         </Box>
       </Box>
@@ -362,4 +355,4 @@ const FrontPage = ({ balance, cards }) => {
   );
 };
 
-export default FrontPage;
+export default DemoFrontPage;

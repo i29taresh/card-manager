@@ -22,15 +22,6 @@ const CardDetails = ({ balance }) => {
   const [firstClick, setFirstClick] = useState(false);
   const [secondClick, setSecondClick] = useState(false);
   let navigate = useNavigate();
-  // const handleMouseDown = () => {
-  //   console.log('pressed');
-  //   setIsPressed(true);
-  // };
-
-  // const handleMouseUp = () => {
-  //   console.log('released');
-  //   setIsPressed(false);
-  // };
   const handleMouseClick = () => {
     console.log("released");
     setIsPressed(!isPressed);
@@ -47,11 +38,11 @@ const CardDetails = ({ balance }) => {
   };
   const handleOnClick = () => {
     navigate("/");
-  }
+  };
   balance = "2748.00";
   return (
     <Box>
-      <HStack padding={5} color={'white'}>
+      <HStack padding={5} color={"white"}>
         <Box onClick={handleOnClick}>
           <AiOutlineArrowLeft size={30} />
         </Box>
@@ -80,17 +71,10 @@ const CardDetails = ({ balance }) => {
           )}
 
           <Center>
-            <div
-              // onMouseDown={handleMouseDown}
-              // onMouseUp={handleMouseUp}
-              // onMouseLeave={handleMouseUp}
-              onClick={handleMouseClick}
-            >
-              {isPressed ? (
-                <BankCardBack cvv={"123"} />
-              ) : (
+            <div onClick={handleMouseClick}>
+              <div className={isPressed ? "rotate-class" : ""}>
                 <BankCard cardNumber="1234 5678 9012 3456" expiryDate="05/22" />
-              )}
+              </div>
             </div>
           </Center>
           <HStack>
@@ -131,7 +115,6 @@ const CardDetails = ({ balance }) => {
 
       <Box
         backgroundColor={"#1C2641"}
-        // height={"100px"}
         borderTopLeftRadius={10}
         borderTopRightRadius={10}
         border={"1px solid black"}
@@ -170,14 +153,6 @@ const CardDetails = ({ balance }) => {
               date={"21/09/2023"}
               time={"02:47 P.M."}
             />
-            {/* <PaymentDetailsCard
-          paymentTo={"Uber"}
-          message={"Service"}
-          amount={-124}
-          recieversAccountNumber={"xxxxxxxxxx7535"}
-          date={"21/09/2023"}
-          time={"08:10 P.M."}
-        /> */}
           </Box>
         </Box>
       </Box>

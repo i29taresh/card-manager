@@ -9,7 +9,7 @@ const BankCard = ({cardNumber, expiryDate}) => {
     <>
         <Box width={'350px'} height={'200px'} bgGradient="linear(to-tr, #D16BA5, #9BD0F4, #1F5BE5)"  borderRadius={10} padding={4}>
             <HStack>
-                <Heading color={'whiteAlpha.900'}>CB</Heading>
+                <Heading fontSize={'30px'} color={'whiteAlpha.900'}>CB</Heading>
                 <Heading color={'white'} size={'md'}>|</Heading>
                 <Heading color={'#C6E4FD'} size={'md'}>Universal Bank</Heading>
             </HStack>
@@ -19,7 +19,7 @@ const BankCard = ({cardNumber, expiryDate}) => {
             </HStack>
 
             <HStack>
-                <Heading color={'white'}>{cardNumber}</Heading>
+                <Heading fontSize={'30px'} color={'white'}>{cardNumber}</Heading>
             </HStack>
 
             <HStack justifyContent={'space-between'}>

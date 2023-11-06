@@ -1,4 +1,4 @@
-import { Box, HStack } from "@chakra-ui/react";
+import { Box, HStack, Spacer } from "@chakra-ui/react";
 import React from "react";
 import { AiOutlineHome } from "react-icons/ai";
 import { FaHistory } from "react-icons/fa";
@@ -22,20 +22,20 @@ const FooterNavBar = () => {
     }
   return (
     <>
-      <Box padding={5} marginTop={'370px'}>
-        <HStack justifyContent={"space-between"} mt={"auto"} mb={0}>
+      <Box color={'#7A91D2'} padding={5} marginTop={'auto'} backgroundColor={'#1A223B'} width={'100vw'} border={'1px solid'} borderTopLeftRadius={'10px'} borderTopRightRadius={'10px'}>
+        <HStack justifyContent={"space-between"}>
           <Box onClick={handleOnHomeButtonClick}>
             <AiOutlineHome size={40} />
           </Box>
-
+          <Spacer />
           <Box onClick={handleOnCatalogueButtonClick}>
             <BiSquareRounded size={40} />
           </Box>
-
+          <Spacer />
           <Box onClick={handleOnHistoryButtonClick}>
             <FaHistory size={40} />
           </Box>
-
+          <Spacer />
           <Box>
             <GiHamburgerMenu size={40} />
           </Box>

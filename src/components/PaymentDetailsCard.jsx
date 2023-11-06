@@ -1,5 +1,6 @@
 import {
   Box,
+  Center,
   Collapse,
   HStack,
   Heading,
@@ -8,6 +9,9 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import React from "react";
+import { FaShare } from "react-icons/fa";
+import { BsMusicNote } from "react-icons/bs";
+import { AiOutlineCar } from "react-icons/ai";
 
 const PaymentDetailsCard = ({
   paymentType,
@@ -17,54 +21,43 @@ const PaymentDetailsCard = ({
   date,
   time,
   recieversAccountNumber,
+  iconType,
 }) => {
   const { isOpen, onToggle } = useDisclosure();
   var floatAmount = parseFloat(amount);
   return (
     <>
-      {/* <Box
-        padding={2}
-        border={"2px"}
-        borderColor={"black"}
-        borderStyle={"solid"}
-        borderRadius={10}
-        onClick={onToggle}
-        mb={2}
-      >
-        <Flex>
-          <Image
-            src="https://bit.ly/dan-abramov"
-            height={"60px"}
-            borderRadius={1000}
-            alt="Dan Abramov"
-          />
-          <Spacer />
-          <Box maxWidth={"50%"} textAlign={"center"}>
-            <Heading size="md">{paymentTo}</Heading>
-            <Text>{message}</Text>
-            <Collapse in={isOpen} animateOpacity>
-              <Box color="black" mt="1">
-                <Text>{recieversAccountNumber}</Text>
-                <Text>{date} {time}</Text>
-              </Box>
-            </Collapse>
-          </Box>
-          <Spacer />
-          <Box>
-            <Heading>+ ${amount}</Heading>
-          </Box>
-        </Flex>
-      </Box> */}
-
       <Box padding={2} borderRadius={10} onClick={onToggle} mb={2}>
         <HStack>
           <Box width={"15%"} minWidth={"60px"}>
-            <Image
-              src="https://bit.ly/dan-abramov"
-              height={"60px"}
-              borderRadius={1000}
-              alt="Dan Abramov"
-            />
+            {iconType === "cardPayment" ? (
+              <Center
+                height={"60px"}
+                width={"60px"}
+                backgroundColor={"#DE3A84"}
+                borderRadius={1000}
+              >
+                <FaShare size={40} color={"white"} />
+              </Center>
+            ) : iconType === "music" ? (
+              <Center
+                height={"60px"}
+                width={"60px"}
+                backgroundColor={"#F3AC37"}
+                borderRadius={1000}
+              >
+                <BsMusicNote size={40} color={"white"} />
+              </Center>
+            ) : (
+              <Center
+                height={"60px"}
+                width={"60px"}
+                backgroundColor={"#2774F3"}
+                borderRadius={1000}
+              >
+                <AiOutlineCar size={40} color={"white"} />
+              </Center>
+            )}
           </Box>
           <Box
             width={"85%"}
@@ -88,7 +81,7 @@ const PaymentDetailsCard = ({
                 </Collapse>
               </Box>
               <Box>
-                {floatAmount >= 0.00 ? (
+                {floatAmount >= 0.0 ? (
                   <Heading size={"md"} color={"white"} fontWeight={"bold"}>
                     {" "}
                     +${Math.abs(amount)}

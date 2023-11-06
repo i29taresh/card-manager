@@ -7,7 +7,9 @@ import CataloguePage from './components/CataloguePage';
 import PaymentDetailsCard from './components/PaymentDetailsCard';
 import TransactionHistoryPage from './components/TransactionHistoryPage';
 import FrontPage from './components/FrontPage.jsx';
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Route, Router, RouterProvider, Routes } from "react-router-dom";
+import FooterNavBar from './components/FooterNavBar.jsx';
+import DemoFrontPage from './components/DemoFrontPage.jsx';
 
 
 function App() {
@@ -20,6 +22,10 @@ function App() {
     {
       path: "/",
       element: <FrontPage cards={cards} />,
+    },
+    {
+      path: "/demo",
+      element: <DemoFrontPage cards={cards} />,
     },
     {
       path: "/cardDetails",

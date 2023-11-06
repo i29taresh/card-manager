@@ -1,25 +1,21 @@
 import React from 'react'
 import PageNamedHeader from './PageNamedHeader'
 import CatalogueItemCard from './CatalogueItemCard'
-import { useNavigate } from 'react-router-dom';
 import { Box } from '@chakra-ui/react';
-import { AiOutlineArrowLeft } from 'react-icons/ai';
+import FooterNavBar from './FooterNavBar';
 
 const CataloguePage = () => {
-  let navigate = useNavigate();
-  const handleOnClick = () => {
-    navigate("/");
-  }
   return (
     <>
-        <Box onClick={handleOnClick} color={'white'} paddingLeft={5}>
-          <AiOutlineArrowLeft size={30} />
-        </Box>
         <PageNamedHeader pageTitle={"Catalogue"} />
-        <CatalogueItemCard paymentType={"Mobile"} amount={'34.00'} />
-        <CatalogueItemCard paymentType={"Internet and TV"} amount={'21.00'} />
-        <CatalogueItemCard paymentType={"Traffic fines"} amount={'1221.00'} />
-        <CatalogueItemCard paymentType={"Housing Services"} amount={'0.00'} />
+        <CatalogueItemCard paymentType={"Mobile"} amount={'34.00'} iconType={'mobile'} />
+        <CatalogueItemCard paymentType={"Internet and TV"} amount={'21.00'} iconType={'wifi'} />
+        <CatalogueItemCard paymentType={"Traffic fines"} amount={'1221.00'} iconType={'car'} />
+        <CatalogueItemCard paymentType={"Housing Services"} amount={'0.00'} iconType={'home'} />
+        <CatalogueItemCard paymentType={"Utility Payment"} amount={'442.00'} iconType={'light'} />
+        <Box className="footer">
+          <FooterNavBar />
+        </Box>
     </>
   )
 }
