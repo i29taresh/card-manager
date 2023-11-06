@@ -3,11 +3,12 @@ import {FcSimCardChip} from 'react-icons/fc';
 import {BsWifi2} from 'react-icons/bs';
 import {FaCcMastercard} from 'react-icons/fa';
 import { Box, HStack, Heading } from '@chakra-ui/react';
-const BankCard = ({cardNumber, expiryDate}) => {
+const BankCard = ({cardNumber, expiryDate, index}) => {
     const bankName = "Universal Bank";
+    let gradient = !index%2 ? "linear(to-tr, #D16BA5, #9BD0F4, #1F5BE5)" : "linear(to-tr, #E97033, #EC8274, #1F5BE5)"
   return (
     <>
-        <Box width={'350px'} height={'200px'} bgGradient="linear(to-tr, #D16BA5, #9BD0F4, #1F5BE5)"  borderRadius={10} padding={4}>
+        <Box width={'350px'} height={'200px'} bgGradient={gradient}  borderRadius={10} padding={4}>
             <HStack>
                 <Heading fontSize={'30px'} color={'whiteAlpha.900'}>CB</Heading>
                 <Heading color={'white'} size={'md'}>|</Heading>

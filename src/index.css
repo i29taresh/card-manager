@@ -15,6 +15,9 @@ code {
 .rotate-left {
   transform: rotate(-90deg) translateX(-100px) translateY(-50px);
 }
+.rotate-right{
+  transform: rotate(90deg);
+}
 
  .external-div{
   width: 100vw;

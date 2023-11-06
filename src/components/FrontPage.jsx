@@ -133,6 +133,7 @@ const FrontPage = ({ balance, cards }) => {
                         <BankCard
                           cardNumber={card.cardNumber}
                           expiryDate={card.expiryDate}
+                          index = {index}
                         />
                       ) : (
                         <BankCardBack />

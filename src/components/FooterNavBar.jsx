@@ -22,7 +22,7 @@ const FooterNavBar = () => {
     }
   return (
     <>
-      <Box color={'#7A91D2'} padding={5} marginTop={'auto'} backgroundColor={'#1A223B'} width={'100vw'} border={'1px solid'} borderTopLeftRadius={'10px'} borderTopRightRadius={'10px'}>
+      <Box color={'#7A91D2'} padding={5} marginTop={'auto'} bgGradient={'linear(to-r, #212A47, #242E4B)'} width={'100vw'} border={'1px solid'} borderTopLeftRadius={'40px'} borderTopRightRadius={'40px'}>
         <HStack justifyContent={"space-between"}>
           <Box onClick={handleOnHomeButtonClick}>
             <AiOutlineHome size={40} />
