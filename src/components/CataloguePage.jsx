@@ -6,7 +6,7 @@ import FooterNavBar from './FooterNavBar';
 
 const CataloguePage = () => {
   return (
-    <>
+    <Box className="main-container">
         <PageNamedHeader pageTitle={"Catalogue"} />
         <CatalogueItemCard paymentType={"Mobile"} amount={'34.00'} iconType={'mobile'} />
         <CatalogueItemCard paymentType={"Internet and TV"} amount={'21.00'} iconType={'wifi'} />
@@ -16,7 +16,7 @@ const CataloguePage = () => {
         <Box className="footer">
           <FooterNavBar />
         </Box>
-    </>
+    </Box>
   )
 }
 

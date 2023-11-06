@@ -62,7 +62,7 @@ const DemoFrontPage = ({ balance, cards }) => {
   // };
   return (
     <>
-      <Box position={"relative"}>
+      <Box className="main-container">
         {!card ? (
           <>
             <PageNamedHeader pageTitle={"Bank Cards"} />
@@ -347,7 +347,7 @@ const DemoFrontPage = ({ balance, cards }) => {
           </>
         )}
 
-        <Box position={"absolute"}>
+        <Box className="footer">
           <FooterNavBar />
         </Box>
       </Box>

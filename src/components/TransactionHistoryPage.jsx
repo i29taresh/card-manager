@@ -6,7 +6,7 @@ import FooterNavBar from "./FooterNavBar";
 
 const TransactionHistoryPage = () => {
   return (
-    <>
+    <Box className="main-container">
       <PageNamedHeader pageTitle={"History"} />
       <Box padding={3}>
         <Heading mb={3} color={"white"} size={"md"}>
@@ -73,7 +73,7 @@ const TransactionHistoryPage = () => {
       <Box className="footer">
           <FooterNavBar />
         </Box>
-    </>
+    </Box>
   );
 };
 

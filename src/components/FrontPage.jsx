@@ -65,7 +65,7 @@ const FrontPage = ({ balance, cards }) => {
   };
   return (
     <>
-      <Box position={"relative"}>
+      <Box className="main-container">
         {!cardClick ? (
           <>
             <PageNamedHeader pageTitle={"Bank Cards"} />
